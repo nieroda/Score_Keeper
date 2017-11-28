@@ -1,10 +1,11 @@
-var p1 = document.getElementsByTagName("button")[0];
-var p2 = document.getElementsByTagName("button")[1];
-var reset = document.getElementsByTagName("button")[2];
+var p1 = document.getElementById("p1");
+var p2 = document.getElementById("p2");
+var reset = document.getElemenById("reset");
 var span1 = document.getElementById("p1");
 var span2 = document.getElementById("p2");
 var numinput = document.querySelector("input");
 var winscore = document.querySelector("p span");
+
 
 var p1score = 0;
 var p2score = 0;
@@ -19,7 +20,7 @@ function reset1(){
   span2.style.color = "black";
 }
 
-p1.addEventListener("click", function(){
+p1.addEventListener("click", () => {
   if(!gameOver){
     p1score++;
     span1.textContent = p1score;
@@ -30,7 +31,7 @@ p1.addEventListener("click", function(){
   }
 });
 
-p2.addEventListener("click", function(){
+p2.addEventListener("click", () => {
   if(!gameOver){
     p2score++;
     span2.textContent = p2score;
@@ -41,16 +42,16 @@ p2.addEventListener("click", function(){
   }
 });
 
-reset.addEventListener("click", function(){
+reset.addEventListener("click", () => {
   reset1();
 });
 
 
 
-numinput.addEventListener("change", function(){
+numinput.addEventListener("change", () => {
   winscore.textContent = numinput.value;
   winningScore = Number(numinput.value);
   reset1();
 });
 
-//comment
+
